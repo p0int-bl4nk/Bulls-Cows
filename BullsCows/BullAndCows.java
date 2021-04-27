@@ -29,11 +29,11 @@ public class BullAndCows {
                 System.out.println("Error: can't generate a secret number with a length of " + length + ".\nChoose a number from the range [1,36].");
             } else {
                 this.length = length;
+                setRange();
             }
         } catch (Exception e) {
             System.out.println("Error: \"" + input + "\" isn't a valid number.");
-        }
-        setRange();
+        }   
     }
     public void setRange() {
         char[] secret = new char[length];
@@ -57,12 +57,13 @@ public class BullAndCows {
                 } else {
                     System.out.println(" (0-9).");
                 }
+                generateCode();
+                play();
             }
         } catch (Exception e) {
             System.out.println("Error: \"" + input + "\" isn't a valid number.");
         }
-        generateCode();
-        play();
+        
     }
     private void play() {
         System.out.println("Okay, let's start the game!");
